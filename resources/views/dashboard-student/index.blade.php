@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="alert alert-success mt-2 mb-2 p-4">
                 <span class="fw-bold fs-5">Selamat Datang {{ Auth::guard('student')->user()->nama }} Di Dashboard
-                    Perpustakaan SD Holang Kaya</span>
+                    Perpustakaan SMP Permata Kaya</span>
             </div>
         </div>
     </div>

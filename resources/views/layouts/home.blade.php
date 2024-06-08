@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> --}}
     <style>
         .row {
             width: 100%
@@ -46,16 +45,13 @@
                         <li><a class="dropdown-item" href="{{ route('login') }}">Login Admin</a></li>
                     </ul>
                 </li>
-                {{-- <li class="nav-item">
-          <a href="{{ route('login-student') }}" class="nav-link btn btn-primary text-white" href="#">Login</a>
-        </li> --}}
             </ul>
         </div>
     </nav>
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Selamat datang di Perpustakaan SD Holang Kaya</h1>
+            <h1 class="display-4">Selamat datang di Perpustakaan SMP Permata Kaya</h1>
             <p class="lead">Temukan berbagai macam buku, artikel, dan referensi di perpustakaan kami.</p>
             <a class="btn btn-primary btn-lg" href="{{ route('book') }}" role="button">Lihat Daftar Buku</a>
         </div>
@@ -68,9 +64,12 @@
             <div class="row">
                 <div class="col-lg-6">
                     <h5>About</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel turpis non lectus porta
-                        tincidunt nec non
-                        odio. Ut euismod dui eget nibh pretium, nec cursus est feugiat.</p>
+                    <p>Perpustakaan SMP Permata Karya adalah pusat pembelajaran yang berfokus pada peningkatan literasi
+                        dan pengetahuan siswa. Terletak di gedung utama sekolah, perpustakaan kami menyediakan koleksi
+                        buku yang luas dan beragam, mulai dari fiksi hingga non-fiksi, ensiklopedia, dan referensi
+                        akademis. Dengan suasana yang ramah dan nyaman, perpustakaan kami menjadi tempat yang ideal bagi
+                        siswa untuk mengeksplorasi dunia literatur, menemukan informasi, dan memperluas wawasan mereka.
+                    </p>
                 </div>
                 <div class="col-lg-6">
                     <h5>Contact</h5>
