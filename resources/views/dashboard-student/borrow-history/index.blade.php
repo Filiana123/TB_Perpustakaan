@@ -1,6 +1,6 @@
 @extends('layouts.dashboard-student')
 @section('title', 'Admin | Riwayat Peminjaman')
-    
+
 @section('content')
 <div class="container">
     <div class="row mb-3">
@@ -13,19 +13,6 @@
             @endif
         </div>
     </div>
-    {{-- <div class="row mt-3 mb-3">
-        <div class="col-md-12">
-            @if ($status)
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <h5>Silahkan tunggu sampai <b>Admin</b> menyetujui peminjaman buku Anda!</h5>
-            </div>
-            @else
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <h5><b>Admin</b> sudah menyetujui, silahkan ambil buku yang anda pinjam di perpustakaan!</h5>
-            </div>
-            @endif
-        </div>
-    </div> --}}
     <div class="row">
         <div class="col-12">
             <div class="card shadow">
@@ -70,7 +57,7 @@
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>
     </div>
-</div>    
+</div>
 @endsection
