@@ -13,16 +13,14 @@ class BorrowController extends Controller
 {
     public function index()
     {
-        $borrows = Borrow::orderBy('id', 'DESC')->get();
+        // Mengambil semua peminjaman yang statusnya bukan 'Mengembalikan'
+        $borrows = Borrow::where('status', '!=', 'Mengembalikan')->orderBy('id', 'DESC')->get();
 
         return view('dashboard.borrow.index', compact('borrows'));
     }
 
     public function create()
     {
-        // $b = Book::where('id', 1)->pluck('stok')->first();
-        // dd($b);
-
         $students = Student::all();
         $categories = CategoryBook::all();
         $books = Book::all();
@@ -47,14 +45,12 @@ class BorrowController extends Controller
 
         $book = Book::where('id', $request->book_id)->pluck('stok')->first();
 
-        if($request->book_id) {
-            if($book == 0) {
+        if ($request->book_id) {
+            if ($book == 0) {
                 return back()->withErrors([
-                    'error' => 'Buku yang anda pinjam stok nya sudah habis..!'
+                    'error' => 'Buku yang anda pinjam stoknya sudah habis..!'
                 ]);
             }
-            // dd($request->book_id);
-            // Book::find($request->book_id)->increment('stok');
             Book::find($request->book_id)->decrement('stok');
         }
 
@@ -79,7 +75,7 @@ class BorrowController extends Controller
 
     public function update(Request $request, $id)
     {
-        $borrow = $validate = $request->validate([
+        $validate = $request->validate([
             'student_id' => 'required|integer',
             'book_id' => 'required|integer',
             'peminjaman' => 'required',
@@ -88,11 +84,12 @@ class BorrowController extends Controller
             'status' => 'required',
         ]);
 
-        if($request->status === 'Mengembalikan') {
+        if ($request->status === 'Mengembalikan') {
             Book::find($request->book_id)->increment('stok');
         }
 
-        $borrow = Borrow::findOrFail($id)->update($validate);
+        $borrow = Borrow::findOrFail($id);
+        $borrow->update($validate);
 
         return redirect()->route('borrow.index')->with('status', 'Data Peminjaman Berhasil Diubah');
     }
